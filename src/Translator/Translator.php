@@ -402,6 +402,9 @@ class Translator
 
             return ($number == 1 ? $singular : $plural);
         }
+        if (is_string($translation)) {
+            return $translation;
+        }
 
         $index = $this->messages[$textDomain][$locale]
                       ->getPluralRule()
